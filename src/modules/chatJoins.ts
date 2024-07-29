@@ -12,9 +12,9 @@ composer.on("chat_join_request", async (ctx) => {
   const settings = await getSettings(update.chat.id);
   let approve_or_not, welcome;
   const def_welcome_approve =
-    "Hey {name}, your request to join {chat} has been approved!";
+    "Merhaba {name}, Gönderdiğin {chat} Katılma İsteğin Onaylandı!";
   const def_welcome_decline =
-    "Hey {name}, your request to join {chat} has been declined!";
+    "Merhaba {name}, Gönderdiğin {chat} Katılma İsteğin Onaylanmadı!";
 
   if (settings == null) {
     approve_or_not = true;
@@ -46,7 +46,7 @@ composer.on("chat_join_request", async (ctx) => {
     return;
   }
 
-  welcome += "\n\nSend /start to know more!";
+  welcome += "\n\nKanal/Grup Sohbet Listene Eklendi Kontrol Et!";
   welcome = welcome.replace("{name}", update.from.first_name).replace(
     "{chat}",
     update.chat.title,
